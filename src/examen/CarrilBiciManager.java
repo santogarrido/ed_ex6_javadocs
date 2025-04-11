@@ -97,6 +97,11 @@ public class CarrilBiciManager {
         return estadoTramos.get(nombre);
     }
 
+    /**
+     * Este método nos devuelve la longitud total del carril bici
+     * 
+     * @return la suma de todos los tramos de un carril bici
+     */
     public double longitudTotal() {
         return tramos.values().stream().mapToDouble(Double::doubleValue).sum();
     }
