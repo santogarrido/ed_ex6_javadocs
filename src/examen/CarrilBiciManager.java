@@ -7,9 +7,9 @@ import java.util.NoSuchElementException;
 
 /**
  * 
- * @version 2.4.0
+ *
  * @author CádizTech
- * @see https://institucional.cadiz.es/area/Plan-de-Movilidad-Urbana-Sostenible/2021
+ * 
  * 
  * Esta clase nos permite gestionar los diferentes carriles bicis de la bahía de Cádiz.
  * Permitiendonos añadir tramos, mirar el estado del carril y actualizarlo, obtener un informe detallado, 
@@ -69,15 +69,27 @@ public class CarrilBiciManager {
     
     
     /**
-     * Este método es recomandeble que se deje de usar
-     * @param nombre
-     * @param estado
+     * Este método nos permite actualizar el estado de un tramo
+     * 
+     * @param nombre -> Recibe el nombre del tramo
+     * @param estado -> Recibe el nuevo estado
      * @deprecated
+     * 
+     * Este método llama al método actualizarEstado()
      */
     public void cambiarEstado(String nombre, String estado) {
         actualizarEstado(nombre, estado);
     }
 
+    /**
+     * Este método nos permite consultar el estado de un tramo
+     * 
+     * @param nombre -> nombre del tramo
+     * @return estado del tramo
+     * 
+     * Este método recibe el nombre de un tramo y si existe ese tramo nos devuelve el estado del mismo
+     * Si no existe el tramo nos muestra un mensaje informando de ello
+     */
     public String consultarEstado(String nombre) {
         if (!estadoTramos.containsKey(nombre)) {
             throw new NoSuchElementException("El tramo indicado no existe");
